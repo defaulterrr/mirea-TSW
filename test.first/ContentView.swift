@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-func calculateDigitAmount(_ string: String) -> Int {
+func countDigitAmount(_ string: String) -> Int {
     let digits = CharacterSet(charactersIn: "0123456789")
     if string.rangeOfCharacter(from: digits) != nil {
         var count = 0
@@ -22,7 +22,7 @@ func calculateDigitAmount(_ string: String) -> Int {
     }
 }
 
-func getAmountOfCharacters(_ string: String, substring str: Character) -> Int {
+func countAmountOfCharacters(_ string: String, substring str: Character) -> Int {
     if string.rangeOfCharacter(from: CharacterSet(charactersIn: String(str))) != nil {
         var count = 0
         for ch in string {
@@ -47,7 +47,6 @@ func getLastQuarter(_ string: String) -> String {
 }
 
 func getMiddleThird(_ string: String) -> String {
-    
     return String(string[string.index(string.startIndex, offsetBy: string.count/3) ..< string.index(string.startIndex, offsetBy: string.count*2/3)])
 }
 
@@ -72,10 +71,10 @@ struct ContentView: View {
         }
         // if less than 12 digits in first string AND last quarter of second string does not contain [a-z]
         // calculate amount of firstSpecialSymbol and secondSpecialSymbols in second third of first string
-        if (calculateDigitAmount(s) < 12  && !containsAZ(getLastQuarter(t))) {
+        if (countDigitAmount(s) < 12  && !containsAZ(getLastQuarter(t))) {
             let secondThird = getMiddleThird(s)
             print("Counting: amount of \(Character(first)) and \(Character(second)) in \(secondThird)")
-            let count = getAmountOfCharacters(secondThird, substring: Character(first)) + getAmountOfCharacters(secondThird, substring: Character(second))
+            let count = countAmountOfCharacters(secondThird, substring: Character(first)) + countAmountOfCharacters(secondThird, substring: Character(second))
             return count
         } else {
             return 0
@@ -112,27 +111,14 @@ struct ContentView: View {
             }
             Button("Calculate") {
                 print("Button called")
-//                print(calculateDigitAmount("123"))
-//                print(calculateDigitAmount("h3"))
-//                print(calculateDigitAmount("aaa"))
-//                print(calculateDigitAmount("-*//"))
-//                print(getLastQuarter("123"))
-//                print(getLastQuarter("hhaabbee"))
-//                print(getLastQuarter("1234"))
-//                print(containsAZ("123"))
-//                print(containsAZ("hhaabbee"))
-//                print(containsAZ("asd"))
-//                print(getMiddleThird("1"))
-//                print(getMiddleThird("123"))
-//                print(getMiddleThird("1234"))
-//                print(getMiddleThird("12345"))
-//                print(getMiddleThird("123456"))
-//                print(getMiddleThird("1234567"))
-//                print(getMiddleThird("12345678"))
-//                print(getMiddleThird("123456789"))
                 amount = calculateAmountOfSpecialSymbols(firstString: firstString, secondString: secondString, firstSpecialSymbol: firstSpecialSymbol, secondSpecialSymbol: secondSpecialSymbol)
+                print(amount)
             }
-            Text("\(amount)")
+            HStack{
+                Spacer()
+                Text("Amount: \(amount)")
+                Spacer()
+            }
         }.frame(minWidth: 100, idealWidth: 200, maxWidth: 500, minHeight: 100, idealHeight: 150, maxHeight: 350, alignment: .center
         )
     }
