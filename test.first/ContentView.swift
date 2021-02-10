@@ -64,10 +64,14 @@ struct ContentView: View {
     @State var firstSpecialSymbol: String = ""
     @State var secondSpecialSymbol: String = ""
     @State var amount: Int = 0
+    @State var showAlert: Bool = false
     
-    func calculateAmountOfSpecialSymbols(firstString s: String, secondString t: String, firstSpecialSymbol first: String, secondSpecialSymbol second: String) -> Int {
+    func calculateAmountOfSpecialSymbols(firstString s: String, secondString t: String, firstSpecialSymbol first: String, secondSpecialSymbol second: String) -> Int? {
         if (s.count == 0 || t.count == 0 || first.count == 0 || second.count == 0) {
-            return 0
+            return nil
+        }
+        if (first.count > 1 || second.count > 1) {
+            return nil
         }
         // if less than 12 digits in first string AND last quarter of second string does not contain [a-z]
         // calculate amount of firstSpecialSymbol and secondSpecialSymbols in second third of first string
@@ -111,8 +115,18 @@ struct ContentView: View {
             }
             Button("Calculate") {
                 print("Button called")
-                amount = calculateAmountOfSpecialSymbols(firstString: firstString, secondString: secondString, firstSpecialSymbol: firstSpecialSymbol, secondSpecialSymbol: secondSpecialSymbol)
+                guard let newAmount = calculateAmountOfSpecialSymbols(firstString: firstString, secondString: secondString, firstSpecialSymbol: firstSpecialSymbol, secondSpecialSymbol: secondSpecialSymbol) else {
+                    showAlert = true
+                    return
+                }
+                amount = newAmount
                 print(amount)
+            }.alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("Evaluation error"),
+                    message: Text("Some of the strings are empty or unprocessable"),
+                    dismissButton: .default(Text("Dismiss"))
+                )
             }
             HStack{
                 Spacer()
