@@ -2,7 +2,7 @@
 //  test_firstApp.swift
 //  test.first
 //
-//  Created by Svyat Petrov on 10.02.2021.
+//  Created by @defaulterrr on 10.02.2021.
 //
 
 import SwiftUI
