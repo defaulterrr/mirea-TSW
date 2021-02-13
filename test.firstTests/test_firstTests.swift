@@ -2,7 +2,7 @@
 //  test_firstTests.swift
 //  test.firstTests
 //
-//  Created by Svyat Petrov on 10.02.2021.
+//  Created by @defaulterrr on 10.02.2021.
 //
 
 import XCTest
@@ -51,6 +51,7 @@ class test_firstTests: XCTestCase {
         let Utilities = UtilitiesProvider()
         
         XCTAssertEqual(Utilities.getLastQuarter("aabbccdd"), "dd")
+        XCTAssertEqual(Utilities.getLastQuarter("aabbccdde"), "dde")
         XCTAssertEqual(Utilities.getLastQuarter("abcd"), "d")
         XCTAssertEqual(Utilities.getLastQuarter("abc"), "")
         XCTAssertEqual(Utilities.getLastQuarter(""), "")
@@ -61,8 +62,19 @@ class test_firstTests: XCTestCase {
         
         XCTAssertEqual(Utilities.getMiddleThird("123"), "2")
         XCTAssertEqual(Utilities.getMiddleThird("1234"), "2")
+        XCTAssertEqual(Utilities.getMiddleThird("12345"), "23")
         XCTAssertEqual(Utilities.getMiddleThird("123456"), "34")
         XCTAssertEqual(Utilities.getMiddleThird("12345678"), "345")
         XCTAssertEqual(Utilities.getMiddleThird(""), "")
+    }
+    
+    func testGetFirstHalf() throws {
+        let Utilities = UtilitiesProvider()
+        
+        XCTAssertEqual(Utilities.getFirstMiddle("1"), "1")
+        XCTAssertEqual(Utilities.getFirstMiddle(""), "")
+        XCTAssertEqual(Utilities.getFirstMiddle("aabb"), "aa")
+        XCTAssertEqual(Utilities.getFirstMiddle("abcde"), "abc")
+        XCTAssertEqual(Utilities.getFirstMiddle("abcdefgh"), "abcd")
     }
 }
