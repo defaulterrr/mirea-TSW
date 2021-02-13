@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct test_firstApp: App {
+    let Utilities = UtilitiesProvider()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(Utilities)
         }
     }
 }

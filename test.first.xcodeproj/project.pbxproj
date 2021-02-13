@@ -13,6 +13,7 @@
 		5338EDDA25D331FD0033E415 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5338EDD925D331FD0033E415 /* Preview Assets.xcassets */; };
 		5338EDE625D331FD0033E415 /* test_firstTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5338EDE525D331FD0033E415 /* test_firstTests.swift */; };
 		5338EDF125D331FD0033E415 /* test_firstUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5338EDF025D331FD0033E415 /* test_firstUITests.swift */; };
+		533D79E125D7F11200B48048 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533D79E025D7F11200B48048 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		5338EDEC25D331FD0033E415 /* test.firstUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = test.firstUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5338EDF025D331FD0033E415 /* test_firstUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_firstUITests.swift; sourceTree = "<group>"; };
 		5338EDF225D331FD0033E415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		533D79E025D7F11200B48048 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				5338EDD225D331FA0033E415 /* test_firstApp.swift */,
 				5338EDD425D331FA0033E415 /* ContentView.swift */,
+				533D79E025D7F11200B48048 /* Utilities.swift */,
 				5338EDD625D331FD0033E415 /* Assets.xcassets */,
 				5338EDDB25D331FD0033E415 /* Info.plist */,
 				5338EDDC25D331FD0033E415 /* test_first.entitlements */,
@@ -263,6 +266,7 @@
 			files = (
 				5338EDD525D331FA0033E415 /* ContentView.swift in Sources */,
 				5338EDD325D331FA0033E415 /* test_firstApp.swift in Sources */,
+				533D79E125D7F11200B48048 /* Utilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

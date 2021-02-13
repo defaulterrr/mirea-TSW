@@ -31,30 +31,38 @@ class test_firstTests: XCTestCase {
     }
     
     func testCountDigitAmount() throws {
-        XCTAssertEqual(countDigitAmount("123"), 3)
-        XCTAssertEqual(countDigitAmount("asd"), 0)
-        XCTAssertEqual(countDigitAmount("h1g2j4"), 3)
-        XCTAssertEqual(countDigitAmount(""), 0)
+        let Utilities = UtilitiesProvider()
+        
+        XCTAssertEqual(Utilities.countDigitAmount("123"), 3)
+        XCTAssertEqual(Utilities.countDigitAmount("asd"), 0)
+        XCTAssertEqual(Utilities.countDigitAmount("h1g2j4"), 3)
+        XCTAssertEqual(Utilities.countDigitAmount(""), 0)
     }
     
     func testCountAmountOfCharacters() throws {
-        XCTAssertEqual(countAmountOfCharacters("aaaaaa", substring: "a"), 6)
-        XCTAssertEqual(countAmountOfCharacters("bbbbbb", substring: "a"), 0)
-        XCTAssertEqual(countAmountOfCharacters("", substring: "a"), 0)
+        let Utilities = UtilitiesProvider()
+        
+        XCTAssertEqual(Utilities.countAmountOfCharacters("aaaaaa", substring: "a"), 6)
+        XCTAssertEqual(Utilities.countAmountOfCharacters("bbbbbb", substring: "a"), 0)
+        XCTAssertEqual(Utilities.countAmountOfCharacters("", substring: "a"), 0)
     }
     
     func testGetLastQuarter() throws {
-        XCTAssertEqual(getLastQuarter("aabbccdd"), "dd")
-        XCTAssertEqual(getLastQuarter("abcd"), "d")
-        XCTAssertEqual(getLastQuarter("abc"), "")
-        XCTAssertEqual(getLastQuarter(""), "")
+        let Utilities = UtilitiesProvider()
+        
+        XCTAssertEqual(Utilities.getLastQuarter("aabbccdd"), "dd")
+        XCTAssertEqual(Utilities.getLastQuarter("abcd"), "d")
+        XCTAssertEqual(Utilities.getLastQuarter("abc"), "")
+        XCTAssertEqual(Utilities.getLastQuarter(""), "")
     }
     
     func testGetMiddleThird() throws {
-        XCTAssertEqual(getMiddleThird("123"), "2")
-        XCTAssertEqual(getMiddleThird("1234"), "2")
-        XCTAssertEqual(getMiddleThird("123456"), "34")
-        XCTAssertEqual(getMiddleThird("12345678"), "345")
-        XCTAssertEqual(getMiddleThird(""), "")
+        let Utilities = UtilitiesProvider()
+        
+        XCTAssertEqual(Utilities.getMiddleThird("123"), "2")
+        XCTAssertEqual(Utilities.getMiddleThird("1234"), "2")
+        XCTAssertEqual(Utilities.getMiddleThird("123456"), "34")
+        XCTAssertEqual(Utilities.getMiddleThird("12345678"), "345")
+        XCTAssertEqual(Utilities.getMiddleThird(""), "")
     }
 }
