@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  test.first
 //
-//  Created by Svyat Petrov on 10.02.2021.
+//  Created by @defaulterrr on 10.02.2021.
 //
 
 import SwiftUI
@@ -27,7 +27,7 @@ struct ContentView: View {
         }
         // if less than 12 digits in first string AND last quarter of second string does not contain [a-z]
         // calculate amount of firstSpecialSymbol and secondSpecialSymbols in second third of first string
-        if (Utilities.countDigitAmount(s) < 12  && !Utilities.containsAZ(Utilities.getLastQuarter(t))) {
+        if (Utilities.countDigitAmount(Utilities.getFirstMiddle(s)) < 12  && !Utilities.containsAZ(Utilities.getLastQuarter(t))) {
             let secondThird = Utilities.getMiddleThird(s)
             print("Counting: amount of \(Character(first)) and \(Character(second)) in \(secondThird)")
             let count = Utilities.countAmountOfCharacters(secondThird, substring: Character(first)) + Utilities.countAmountOfCharacters(secondThird, substring: Character(second))
